@@ -1,5 +1,32 @@
-<h1>All Events</h1>
+<div id="event-id">
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <% @events.each do |event| %>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <%= link_to event do %>
+              <img class="card-img-top" src="https://via.placeholder.com/460x160?text=Event+Poster+Here" alt="Card image cap">
+               <% end %>
+              <div class="card-body">
+                <div class="d-flex bd-highlight">
+                  <div class="p-2 w-100 bd-highlight"><%= link_to event.title, event %></div>
+                  <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to event.creator.username, event.creator %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %><!-- @events loop -->
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</div><!-- event-id -->
 
-<% @events.each do |event| %>
-  <li><%= link_to event.title, event %> by: <%= link_to event.creator.username, user_path(event.creator.id) %></li>
-<% end %>
+
+
+
+
+
+
+
+
+
+
