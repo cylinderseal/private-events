@@ -1,0 +1,5 @@
+<h1>All Events</h1>
+
+<% @events.each do |event| %>
+  <li><%= link_to event.title, event %> by: <%= link_to event.creator.username, user_path(event.creator.id) %></li>
+<% end %>
