@@ -14,6 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   background-color: gray;
@@ -25,4 +26,18 @@ body {
     padding:0;
     margin: auto;
   }
+}
+
+/** Fonts **/
+
+.fa-star,
+.fa-map-marker,
+.fa-sliders, 
+.fa-calendar,
+.fa-tag {
+  font-size: 27px;
+}
+
+.fa-share-alt {
+  font-size: 20px;
 }
