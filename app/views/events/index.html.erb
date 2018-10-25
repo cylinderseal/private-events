@@ -1,5 +1,18 @@
 <div id="event-id">
   <div class="container-fluid mt-4">
+    
+    <div class="dropdown mb-4">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "All", events_path, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Upcoming", events_path(category: "fuure"), class: "dropdown-item" %>
+        <%= link_to "Past", events_path(category: "past"), class: "dropdown-item" %>
+      </div>
+    </div>
+    
     <div class="row">
       <% @events.each do |event| %>
           <div class="col-md-4 mb-3">
