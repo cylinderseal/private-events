@@ -5,14 +5,22 @@
         
         <div class="row">
           <div class="col-md-8 p-0">
-            <img class="card-img-top" src="https://via.placeholder.com/460x160?text=Event+Poster+Here" alt="Card image">
+            <img class="card-img-top" 
+                        src="https://via.placeholder.com/460x160?text=Event+Poster+Here" alt="Card image">
           </div>
           <div class="col-md-4 p-0">
             <div class="container-fluid mx-2 py-3">
               <div class="d-flex bd-highlight">
-                <div class="p-2 bd-highlight">NOV 13</div>
-                <div class="p-2 w-100 bd-highlight"></div>
-                <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to @event.creator.username, @event.creator %></div>
+                <div class="p-2 w-100 bd-highlight">
+                  <h4>NOV 13</h4>
+                </div>
+                <div class="p-2 flex-shrink-1 bd-highlight">
+                  <div class="container-fluid">
+                    <%= link_to image_tag("https://via.placeholder.com/70x70?text=Event+Poster+Here", 
+                                                        class: "rounded-circle"), @event.creator %>
+                    <%= link_to @event.creator.username, @event.creator %>
+                  </div>
+                </div>
               </div>
               <div class="ml-2"><h4><%= @event.title %></h4></div>
             </div>
@@ -67,7 +75,3 @@
     </div><!-- card-body -->
   </div><!-- card -->
 </div><!-- event-show -->
-
- <!--<h6>Nov 13</h6>-->
- <!--             <h6><%#= @event.title %></h6>-->
- <!--             <small>by <%#= link_to @event.creator.username, user_path(@event.creator) %></small>-->

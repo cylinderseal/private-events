@@ -8,7 +8,7 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "All", events_path, class: "dropdown-item" %>
         <div class="dropdown-divider"></div>
-        <%= link_to "Upcoming", events_path(category: "fuure"), class: "dropdown-item" %>
+        <%= link_to "Upcoming", events_path(category: "future"), class: "dropdown-item" %>
         <%= link_to "Past", events_path(category: "past"), class: "dropdown-item" %>
       </div>
     </div>
@@ -20,10 +20,14 @@
               <%= link_to event do %>
               <img class="card-img-top" src="https://via.placeholder.com/460x160?text=Event+Poster+Here" alt="Card image cap">
                <% end %>
-              <div class="card-body">
+              <div class="card-body p-0">
                 <div class="d-flex bd-highlight">
-                  <div class="p-2 w-100 bd-highlight"><%= link_to event.title, event %></div>
-                  <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to event.creator.username, event.creator %></div>
+                  <div class="mt-4 p-2 w-100 bd-highlight">
+                    <%= link_to event.title, event %>
+                  </div>
+                  <div class="p-2 flex-shrink-1 bd-highlight">
+                    <%= link_to image_tag("https://via.placeholder.com/70x70?text=Event+Poster+Here", class: "rounded-circle"), event.creator %>
+                  </div>
                 </div>
               </div>
             </div>
