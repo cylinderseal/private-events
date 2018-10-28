@@ -8,9 +8,9 @@ alex = User.create!(username: "alex", email: "alex@example.com",
 event1 = Event.create!(title: "Ruby Party", description: "Hello, world", 
                        date: "Mon, 15 Oct 2018 16:46:58 +0000", creator_id: 1)
 event2 = Event.create!(title: "Ripple Party", description: "Hello, world",
-                       date: "Thu, 25 Oct 2018 16:46:58 +0000", creator_id: 2)
+                       date: "Mon, 29 Oct 2020 16:46:58 +0000", creator_id: 2)
 event3 = Event.create!(title: "XRP Party", description: "Hello, world",
-                       date: "Sat, 27 Oct 2018 16:46:58 +0000", creator_id: 3)
+                       date: "Tue, 30 Oct 2020 16:46:58 +0000", creator_id: 3)
 
 event1.attendees << al
 event2.attendees << al

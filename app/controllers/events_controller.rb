@@ -2,15 +2,19 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    events = Event.all
-    if params[:category] == "past"
-      @events = events.past
-      return
-    elsif params[:category] == "future"
-      @events = events.future
-      return
+    if params[:tag]
+      @events = Event.tagged_with(params[:tag])
     else
-      @events = events
+      events = Event.all
+      if params[:category] == "past"
+        @events = events.past
+        return
+      elsif params[:category] == "future"
+        @events = events.future
+        return
+      else
+        @events = events
+      end
     end
   end
 
@@ -28,6 +32,16 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
+  end
+  
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to @event
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -37,6 +51,6 @@ class EventsController < ApplicationController
   private
   
     def event_params
-      params.require(:event).permit(:title, :description, :date, :location)
+      params.require(:event).permit(:title, :description, :date, :location, :tag_list)
     end
 end

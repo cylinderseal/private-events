@@ -35,9 +35,9 @@
       </div>
       <div class="col-12">
         <h2>Tags</h2>
-        <span class="badge badge-pill badge-secondary">Tag1</span>
-        <span class="badge badge-pill badge-secondary">Tag2</span>
-        <span class="badge badge-pill badge-secondary">Tag3</span>
+        <% @event.tag_list.each do |tag| %>
+          <span class="badge badge-pill badge-secondary"><%= link_to tag, tag_path(tag) %></span>
+        <% end %>
       </div>
     </div><!-- row 2 -->
   </div><!-- card-body -->
