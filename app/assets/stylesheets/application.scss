@@ -49,18 +49,8 @@ h2 {
   font-size: 1em;
 }
 
-/** Fonts **/
+/* event-show */
 
-
-
-.fa-star,
-.fa-map-marker,
-.fa-sliders, 
-.fa-calendar,
-.fa-tag {
-  font-size: 27px;
-}
-
-.fa-share-alt {
-  font-size: 20px;
+#event-show .card-info {
+  background-color: #E9E8E7;
 }

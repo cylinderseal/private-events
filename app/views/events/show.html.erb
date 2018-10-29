@@ -1,45 +1,47 @@
-<div class="card">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8 p-0">
-        <img class="img-fluid" src="https://via.placeholder.com/700x300?text=Event+Poster+Here" alt="Card image cap">
-      </div>
-      <div class="col-sm-4 p-3">
-        <span><%= @event.date.strftime("%B %d %Y") %></span>
-        <h1><%= @event.title %></h1>
-        <small>By: <%= link_to @event.creator.username, user_path(@event.creator.username) %></small>
-      </div>
-      <div class="col-12">
-        <div class="row border-top border-bottom p-2">
-          <div class="col-sm-8 d-none d-md-block d-lg-block">
-            <button class="btn btn-secondary"><%= fa_icon "bookmark" %></button>
-          </div>
-          <div class="col-sm-4">
-            <button class="btn btn-secondary btn-block">Attend</button>
+<div id="event-show">
+  <div class="card">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8 p-0">
+          <img class="img-fluid" src="https://via.placeholder.com/900x300?text=Event+Poster+Here" alt="Card image cap">
+        </div>
+        <div class="card-info col-sm-4 p-3">
+          <span><%= @event.date.strftime("%B %d %Y") %></span>
+          <h1><%= @event.title %></h1>
+          <small>By: <%= link_to @event.creator.username, user_path(@event.creator.id) %></small>
+        </div>
+        <div class="col-12">
+          <div class="row border-top border-bottom p-2">
+            <div class="col-sm-8 d-none d-md-block d-lg-block">
+              <button class="btn btn-secondary"><%= fa_icon "bookmark" %></button>
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-secondary btn-block">Attend</button>
+            </div>
           </div>
         </div>
-      </div>
-    </div><!-- row 1 -->
-  </div><!-- container-fluid -->
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>Description</h2>
-        <p><%= @event.description %></p>
-      </div>
-      <div class="col-sm-4">
-        <h2>Date & Time</h2>
-        <p class="m-0"><%= @event.date.strftime("%B %d %Y") %></p>
-        <p class="">2:30 PM</p>
-        <h2>Location</h2>
-        <p>Manila, Philippines</p>
-      </div>
-      <div class="col-12">
-        <h2>Tags</h2>
-        <% @event.tag_list.each do |tag| %>
-          <span class="badge badge-pill badge-secondary"><%= link_to tag, tag_path(tag) %></span>
-        <% end %>
-      </div>
-    </div><!-- row 2 -->
-  </div><!-- card-body -->
-</div><!-- card -->
+      </div><!-- row 1 -->
+    </div><!-- container-fluid -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Description</h2>
+          <p><%= @event.description %></p>
+        </div>
+        <div class="col-sm-4">
+          <h2>Date & Time</h2>
+          <p class="m-0 text-secondary"><%= @event.date.strftime("%B %d %Y") %></p>
+          <p class="">2:30 PM</p>
+          <h2>Location</h2>
+          <p>Manila, Philippines</p>
+        </div>
+        <div class="col-12">
+          <h2>Tags</h2>
+          <% @event.tag_list.each do |tag| %>
+            <span class="badge badge-pill badge-secondary"><%= link_to tag, tag_path(tag) %></span>
+          <% end %>
+        </div>
+      </div><!-- row 2 -->
+    </div><!-- card-body -->
+  </div><!-- card -->
+</div>
