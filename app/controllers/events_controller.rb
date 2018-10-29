@@ -47,6 +47,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @user = User.first
   end
   
   def destroy
