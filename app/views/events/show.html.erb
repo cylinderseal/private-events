@@ -19,10 +19,8 @@
               </div>
               <div class="col-sm-4">
                 <% if current_user.attending?(@event) %>
-                  <!--<button class="btn btn-secondary btn-block">Attend</button>-->
                   <%= render 'cancel' %>
                 <% else %>
-                  <!--<button class="btn btn-secondary btn-block">Cancel</button>-->
                   <%= render 'attend' %>
                 <% end %>
               </div>
@@ -36,7 +34,7 @@
         <div class="col-sm-8">
           <h2>
             Description
-            <% if user_signed_in? %>
+            <% if user_signed_in? && @event.creator == current_user %>
               <%= link_to "Edit", edit_event_path(@event), class: "badge badge-secondary" %>
             <% end %>
           </h2>

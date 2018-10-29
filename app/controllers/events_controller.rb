@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
-  before_action :set_event, except: [:index, :new]
+  before_action :set_event, except: [:index, :new, :event_owner]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :event_owner, only: [:edit, :update, :destroy]
   
   def index
     if params[:tag]
@@ -60,5 +61,12 @@ class EventsController < ApplicationController
     
     def set_event
       @event = Event.find(params[:id])
+    end
+    
+    def event_owner
+      unless @event.creator_id == current_user.id
+        flash[:notice] = 'Access denied as you are not the creator of the event'
+        redirect_to root_path
+      end
     end
 end
