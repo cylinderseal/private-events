@@ -1,6 +1,9 @@
 <div id="user-show">
   <div class="jumbotron mt-4">
     <h1 class="text-center display-4"><%= @user.username %></h1>
+    <% @user.attended_events.each do |attended_event| %>
+      <li><%= link_to attended_event.title, attended_event %></li>
+    <% end %>
   </div>
 </div>
 
