@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, except: [:index, :new]
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   
   def index
     if params[:tag]
