@@ -1,4 +1,4 @@
-<div id="event-id">
+<div id="event-index">
   <div class="container-fluid mt-4">
     
     <div class="dropdown mb-4">
@@ -26,10 +26,10 @@
               <div class="card-body p-0">
                 <div class="d-flex bd-highlight">
                   <div class="mt-4 p-2 w-100 bd-highlight">
-                    <%= link_to event.title, event %>
+                    <h1><%= link_to event.title, event %></h1>
                   </div>
                   <div class="p-2 flex-shrink-1 bd-highlight">
-                    <%= link_to image_tag("https://via.placeholder.com/70x70?text=Event+Poster+Here", class: "rounded-circle"), username_path(event.creator) %>
+                    <%= link_to image_tag("avatar.png", class: "rounded-circle avatar"), username_path(event.creator) %>
                   </div>
                 </div>
               </div>

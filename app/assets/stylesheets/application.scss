@@ -57,11 +57,32 @@ h2 {
   font-size: 1em;
 }
 
+nav h1 {
+  font-size: 1.2em;
+}
+
+nav .avatar {
+  height: 35px;
+  width: 35px;
+}
+
+/* event-index */
+
+#event-index .avatar {
+  height: 70px;
+  width: 70px;
+}
+
 /* event-show */
 
 #event-show .card-info {
   background-color: #E9E8E7;
   border-top-right-radius: 0.25rem;
+}
+
+#event-show .avatar {
+  height: 50px;
+  width: 50px;
 }
 
 #event-show img {
