@@ -29,7 +29,7 @@
                     <%= link_to event.title, event %>
                   </div>
                   <div class="p-2 flex-shrink-1 bd-highlight">
-                    <%= link_to image_tag("https://via.placeholder.com/70x70?text=Event+Poster+Here", class: "rounded-circle"), event.creator %>
+                    <%= link_to image_tag("https://via.placeholder.com/70x70?text=Event+Poster+Here", class: "rounded-circle"), username_path(event.creator) %>
                   </div>
                 </div>
               </div>

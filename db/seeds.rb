@@ -1,9 +1,9 @@
-User.create!(username: "Root User", email: "root_user@example.com", 
+User.create!(username: "rootuser", email: "root_user@example.com", 
              password: "123456", password_confirmation: "123456")
 puts "Created Root User"
 
 50.times do |n|
-  User.create!(username: Faker::Name.name, 
+  User.create!(username: Faker::Name.name.split(" ").join.tr('(.)', '').downcase, 
                email: Faker::Name.name.split(" ")[0] + "#{n}@example.com",
                password: "123456", password_confirmation: "123456")
 end

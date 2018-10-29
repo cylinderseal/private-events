@@ -8,7 +8,7 @@
         <div class="card-info col-sm-4 p-3">
           <span><%= @event.date.strftime("%B %d %Y") %></span>
           <h1><%= @event.title %></h1>
-          <small>By: <%= link_to @event.creator.username, user_path(@event.creator.id) %></small>
+          <small>By: <%= link_to @event.creator.username, username_path(@event.creator) %></small>
         </div>
         <% if user_signed_in? %>
           <div class="col-12">
