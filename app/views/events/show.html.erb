@@ -26,7 +26,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-sm-8">
-          <h2>Description</h2>
+          <h2>Description <%= link_to "Edit", edit_event_path(@event), class: "badge badge-secondary" %></h2>
           <p><%= @event.description %></p>
         </div>
         <div class="col-sm-4">
