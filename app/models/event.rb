@@ -6,8 +6,4 @@ class Event < ApplicationRecord
   scope :past, -> { where("date < ?", DateTime.now) }
   scope :future, -> { where("date > ?", DateTime.now) }
   acts_as_taggable
-  
-  def attended_by?(user)
-    attendees.include?(user)
-  end
 end
