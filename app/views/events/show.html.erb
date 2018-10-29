@@ -5,14 +5,14 @@
         <img class="img-fluid" src="https://via.placeholder.com/700x300?text=Event+Poster+Here" alt="Card image cap">
       </div>
       <div class="col-sm-4 p-3">
-        <span>Nov 13</span>
-        <h1>This is the title of the event</h1>
-        <small>By: The creator</small>
+        <span><%= @event.date.strftime("%B %d %Y") %></span>
+        <h1><%= @event.title %></h1>
+        <small>By: <%= link_to @event.creator.username, user_path(@event.creator.username) %></small>
       </div>
       <div class="col-12">
         <div class="row border-top border-bottom p-2">
           <div class="col-sm-8 d-none d-md-block d-lg-block">
-            <button class="btn btn-secondary">Save</button>
+            <button class="btn btn-secondary"><%= fa_icon "bookmark" %></button>
           </div>
           <div class="col-sm-4">
             <button class="btn btn-secondary btn-block">Attend</button>
@@ -25,11 +25,12 @@
     <div class="row">
       <div class="col-sm-8">
         <h2>Description</h2>
-        <p>This is a description.</p>
+        <p><%= @event.description %></p>
       </div>
       <div class="col-sm-4">
         <h2>Date & Time</h2>
-        <p>Nov 13, 2018</p>
+        <p class="m-0"><%= @event.date.strftime("%B %d %Y") %></p>
+        <p class="">2:30 PM</p>
         <h2>Location</h2>
         <p>Manila, Philippines</p>
       </div>

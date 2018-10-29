@@ -16,6 +16,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
+/* Global */
+
 body {
   background-color: gray;
   padding-top: 65px; 
@@ -28,7 +30,16 @@ body {
   }
 }
 
-/** Fonts **/
+a {
+  color: grey;
+  &:hover {
+    color: grey;
+  }
+}
+
+.badge a {
+  color: white;
+}
 
 h1 {
   font-size: 1.4em;
@@ -37,6 +48,10 @@ h1 {
 h2 {
   font-size: 1em;
 }
+
+/** Fonts **/
+
+
 
 .fa-star,
 .fa-map-marker,
