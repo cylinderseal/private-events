@@ -1,31 +1,35 @@
 <div id="user-show">
-  <div class="jumbotron mt-4">
-    <h1 class="text-center display-4"><%= @user.username %></h1>
-    <% @user.attended_events.each do |attended_event| %>
-      <li><%= link_to attended_event.title, attended_event %></li>
-    <% end %>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<h1><%#= @user.username %></h1>-->
-<!--<p><%#= @user.email %></p>-->
-
-<!--<h3>My Events:</h3>-->
-
-<!--<%# @user.events.each do |event| %>-->
-<!--  <li><%#= link_to event.title, event %></li>-->
-<!--<%# end %>-->
+  <div class="card border-0 mt-4">
+    <div class="card-header p-5 bg-dark"></div>
+    <div class="card-body text-center">
+      <h1 class="card-title mb-0"><%= @user.username %></h1>
+      <span><%= @user.email %></span>
+      <!--<p class="card-text mt-2">User Bio</p>-->
+      <ul class="nav nav-tabs mt-2">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Live Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Past Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+      <% @user.events.each do |event| %>
+        <div class="list-group border-bottom">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border-0">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><%= event.title %></h5>
+              <small><%= time_ago_in_words(event.created_at) %> ago</small>
+            </div>
+            <p class="mb-1"><%= truncate(event.description, length: 70) %></small>
+          </a>
+        </div>
+      <% end %>
+    </div>
+    <div class="container-fluid avatar-wrapper text-center">
+      <%= image_tag("avatar.png", class: "rounded-circle avatar img-fluid") %>
+    </div>
+  </div><!-- card -->
+</div><!-- user-show -->

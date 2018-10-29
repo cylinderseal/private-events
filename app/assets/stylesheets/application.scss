@@ -88,3 +88,27 @@ nav .avatar {
 #event-show img {
   border-top-left-radius: 0.25rem;
 }
+
+/* user-show */
+
+
+#user-show .avatar-wrapper {
+  left: 50%;
+  margin-left: -37px; 
+  top: 3.5rem;
+}
+
+#user-show .avatar {
+  position: absolute;
+  margin-left: -31px;
+  top: 20px;
+  height: 9em;
+}
+
+#user-show .card-title {
+  margin-top: 3.5rem
+}
+
+#user-show h1 {
+  font-size: 1.5em;
+}
